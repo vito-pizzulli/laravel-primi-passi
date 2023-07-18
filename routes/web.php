@@ -96,5 +96,40 @@ Route::get('/games', function () {
 })->name('games-list');
 
 Route::get('/series', function () {
+    $data = [
+        'seriesList' => [
+            [
+                'title' => 'Game Of Thrones',
+                'channel' => 'HBO',
+                'plot' => 'Nel mitico continente di Westeros, diverse potenti famiglie lottano per il controllo dei Sette Regni. Mentre il conflitto scoppia nei regni degli uomini, un antico nemico torna a minacciare tutti. Nel frattempo, gli ultimi eredi di una dinastia recentemente usurpata tramano per riprendersi la loro patria dall\'altra parte del Mare Stretto.'
+            ],
+            [
+                'title' => 'Breaking Bad',
+                'channel' => 'AMC',
+                'plot' => 'Ambientata ad Albuquerque, nel New Mexico, tra il 2008 e il 2010, Breaking Bad segue Walter White, un insegnante di chimica del liceo in difficoltà e frustrato che si trasforma in uno spietato boss del traffico locale di metanfetamine, spinto a provvedere economicamente alla sua famiglia dopo che gli è stato diagnosticato un cancro ai polmoni inoperabile.'
+            ],
+            [
+                'title' => 'The Big Bang Theory',
+                'channel' => 'CBS',
+                'plot' => 'Una donna che si trasferisce nell\'appartamento di fronte a due fisici brillanti ma socialmente impacciati mostra loro quanto poco sappiano della vita al di fuori del laboratorio.'
+            ],
+            [
+                'title' => 'How I Met Your Mother',
+                'channel' => 'CBS',
+                'plot' => 'Ted Mosby siede con i suoi figli per raccontare loro la storia di come ha conosciuto la loro madre. La storia è raccontata attraverso i ricordi dei suoi amici Marshall, Lily, Robin e Barney Stinson. Tutte le leggendarie 9 stagioni conducono al momento dell\'incontro finale di Ted con "quella giusta".'
+            ],
+            [
+                'title' => 'Black Mirror',
+                'channel' => 'Netflix',
+                'plot' => 'Una serie antologica che esplora un multiverso contorto e high-tech in cui si scontrano le più grandi innovazioni e gli istinti più oscuri dell\'umanità.'
+            ],
+            [
+                'title' => 'Vikings',
+                'channel' => 'History Channel',
+                'plot' => 'La storia di Ragnar Lothbrok, un contadino norreno assetato di esplorazione, che diventa il re degli uomini del nord. Lothbrok, offuscato dall\'ambizione e dal desiderio di raggiungere la supremazia, conduce i suoi uomini e la sua famiglia alla gloria nelle terre storiche della Gran Bretagna e della Francia.'
+            ],
+        ]
+    ];
+
     return view('series', $data);
 })->name('series-list');
