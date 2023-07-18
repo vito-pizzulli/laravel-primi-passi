@@ -14,5 +14,34 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $data = [
+        'mangaList' => [
+            [
+                'title' => 'One Piece',
+                'author' => 'Eiichiro Oda'
+            ],
+            [
+                'title' => 'Naruto',
+                'author' => 'Masashi Kishimoto'
+            ],
+            [
+                'title' => 'Attack on Titan',
+                'author' => 'Hajime Isayama'
+            ],
+            [
+                'title' => 'Dragon Ball',
+                'author' => 'Akira Toriyama'
+            ],
+            [
+                'title' => 'Chainsaw Man',
+                'author' => 'Tatsuki Fujimoto'
+            ],
+            [
+                'title' => 'The Seven Deadly Sins',
+                'author' => 'Nakaba Suzuki'
+            ],
+        ]
+    ];
+
+    return view('home', $data);
 })->name('homepage');
