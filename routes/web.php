@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('home');
+})->name('homepage');
+
+Route::get('/manga', function () {
     $data = [
         'mangaList' => [
             [
@@ -49,5 +53,48 @@ Route::get('/', function () {
         ]
     ];
 
-    return view('home', $data);
-})->name('homepage');
+    return view('manga', $data);
+})->name('manga-list');
+
+Route::get('/games', function () {
+    $data = [
+        'gamesList' => [
+            [
+                'title' => 'Kingdom Hearts',
+                'developerHouse' => 'Square Enix',
+                'plot' => 'Le vite di tre amici vengono rovinate in una sola notte, quando la loro casa viene distrutta dagli Heartless. Ora Sora deve trovare Riku e Kairi attraversando mondi diversi, accompagnato dai personaggi Disney e Final Fantasy, e armato di una misteriosa "chiave".'
+            ],
+            [
+                'title' => 'Final Fantasy 7',
+                'developerHouse' => 'Squaresoft',
+                'plot' => 'La ShinRa Corporation, un impero aziendale corrotto, mantiene un controllo ferreo sugli abitanti del Pianeta con il suo monopolio su tutti gli aspetti della vita. Prosciugando l\'energia vitale del pianeta e distribuendola come fonte di elettricità a basso costo, la ShinRa non solo ingrassa il proprio portafoglio, ma distrugge anche il pianeta. Per questo motivo, un piccolo gruppo di ribelli noto come Avalanche ha deciso di ribellarsi agli ShinRa e di ostacolare il loro piano distruttivo. Ma un generale dello ShinRa, che si credeva morto da tempo, ora trama per distruggere sia lo ShinRa che il Pianeta evocando la magia nera per eccellenza, Meteor. Di fronte alle avversità, Avalanche deve ora lottare per il futuro del Pianeta, dell\'intera umanità e delle proprie vite.'
+            ],
+            [
+                'title' => 'Mass Effect 3',
+                'developerHouse' => 'Bioware',
+                'plot' => 'Il futuro è qui: prendi il controllo del Comandante Shepard nei panni dell\'ultimo protettore della Galassia, che deve salvare tutto dalla più grande minaccia dell\'Universo: i Razziatori.'
+            ],
+            [
+                'title' => 'Resident Evil 4',
+                'developerHouse' => 'Capcom',
+                'plot' => 'Sono passati sei anni dal disastro biologico di Raccoon City. L\'agente Leon S. Kennedy, uno dei sopravvissuti all\'incidente, è stato inviato a salvare la figlia rapita del presidente. La rintraccia in un villaggio europeo isolato, dove c\'è qualcosa di terribilmente sbagliato negli abitanti del luogo.'
+            ],
+            [
+                'title' => 'The Last Of Us',
+                'developerHouse' => 'Naughty Dog',
+                'plot' => 'In un mondo ostile e post-pandemico, Joel ed Ellie, uniti da circostanze disperate, devono fare affidamento l\'uno sull\'altra per sopravvivere a un viaggio brutale attraverso ciò che resta degli Stati Uniti.'
+            ],
+            [
+                'title' => 'God Of War Ragnarok',
+                'developerHouse' => 'Santa Monica Studio',
+                'plot' => 'Kratos e Atreus, padre e figlio, devono affrontare le conseguenze della loro azione che ha scatenato il Ragnarok, la fine del mondo secondo la profezia. Nel loro viaggio attraverso i nove regni, incontreranno alleati e nemici, tra cui i potenti dei norreni come Thor e Odino. Atreus, che ha scoperto di essere un gigante e il vero Loki, cerca di capire il suo destino e il suo ruolo nel Ragnarok. Kratos, invece, deve decidere se proteggere la sua famiglia o i regni dalla distruzione.'
+            ],
+        ]
+    ];
+
+    return view('games', $data);
+})->name('games-list');
+
+Route::get('/series', function () {
+    return view('series', $data);
+})->name('series-list');
