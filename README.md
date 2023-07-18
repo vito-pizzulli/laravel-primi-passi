@@ -6,7 +6,7 @@
 <p>Per prima cosa, creiamo un nuovo progetto Laravel 9, utilizzando questo comando:</p>
  <pre>composer create-project laravel/laravel:^9.2 laravel-primi-passi</pre>
 <p>Al termine dell'installazione, entriamo nella cartella del progetto cd laravel-primi-passi e avviamo l'artisan serve con uno di questi due comandi:</p>
-<pre>php artisan serve oppure php -S localhost:8000 -t public</pre>
+<pre>php artisan serve</pre><span>oppure</span><pre>php -S localhost:8000 -t public</pre>
 <p>A questo punto, iniziamo a prendere confidenza con le rotte e le views:</p>
 
 - Cancelliamo la view welcome.blade.php e creiamo una nostra homepage.
