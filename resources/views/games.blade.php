@@ -7,7 +7,16 @@
     <title>Lista Videogiochi</title>
 </head>
 <body>
-    <h1>Videogiochi</h1>
+    <header>
+        <nav>
+            <h1>Videogiochi</h1>
+            <ul>
+                <li><a href="{{ route('homepage')}}">Home</a></li>
+                <li><a href="{{ route('manga-list')}}">Manga</a></li>
+                <li><a href="{{ route('series-list')}}">Serie TV</a></li>
+            </ul>
+        </nav>
+    </header>
     @foreach ($gamesList as $game)
         <div>
             <h2>{{ $game['title'] }}</h2>
